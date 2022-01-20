@@ -71,5 +71,5 @@ EOF'
 
 #Start Prometheus and Node Exporter for Prometheus Service
 sudo systemctl daemon-reload
-sudo enable node_exporter.service prometheus.service
-sudo start node_exporter.service prometheus.service
+sudo systemctl enable node_exporter.service prometheus.service
+sudo systemctl start node_exporter.service prometheus.service

@@ -83,6 +83,14 @@ resource "aws_security_group" "prometheus_grafana_ec2" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+ingress {
+    description = "HTTP"
+    from_port   = 9100
+    to_port     = 9100
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
