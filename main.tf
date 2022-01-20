@@ -31,7 +31,7 @@ resource "aws_subnet" "prometheus_grafana_public" {
 }
 
 resource "aws_internet_gateway" "prometheus_grafana" {
-  vpc_id = aws_vpc.prometheus.id
+  vpc_id = aws_vpc.prometheus_grafana.id
 
   tags = {
     Name = "prometheus_grafana"
