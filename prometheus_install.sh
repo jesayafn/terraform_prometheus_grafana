@@ -23,10 +23,6 @@ ExecStart=/opt/node_exporter-1.3.1.linux-amd64/node_exporter
 WantedBy=default.target
 EOF'
 
-#Start Node Exporter for Prometheus Service
-sudo systemctl daemon-reload
-sudo enable node_exporter.service
-sudo start node_exporter.service
 
 #Install Prometheus [Port:9090, Version:v2.32.1]
 cd /opt
@@ -73,7 +69,7 @@ ExecStart=/opt/prometheus-2.32.1.linux-amd64/prometheus --config.file=/opt/prome
 WantedBy=default.target
 EOF'
 
-#Start Prometheus Service
+#Start Prometheus and Node Exporter for Prometheus Service
 sudo systemctl daemon-reload
-sudo enable prometheus.service
-sudo start prometheus.service
+sudo enable node_exporter.service prometheus.service
+sudo start node_exporter.service prometheus.service
