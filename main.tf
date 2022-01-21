@@ -76,7 +76,7 @@ resource "aws_security_group" "prometheus_grafana_ec2" {
   }
 
   ingress {
-    description = "HTTP"
+    description = "Prometheus"
     from_port   = 9090
     to_port     = 9090
     protocol    = "tcp"
@@ -84,9 +84,17 @@ resource "aws_security_group" "prometheus_grafana_ec2" {
   }
 
 ingress {
-    description = "HTTP"
+    description = "Node Exporter for Prometheus"
     from_port   = 9100
     to_port     = 9100
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+ingress {
+    description = "Grafana"
+    from_port   = 3000
+    to_port     = 3000
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
