@@ -1,8 +1,8 @@
 #!bin/bash
 
 #Update repositori
-sudo apt-get update
-sudo apt install vi
+sudo apt update
+sudo apt upgrade -y
 
 #Installing Node Exporter for Prometheus [Port:9100, Version: v1.3.1]
 wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz -P /opt
