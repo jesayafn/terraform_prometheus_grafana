@@ -6,7 +6,7 @@ sudo apt install vi
 
 #Installing Node Exporter for Prometheus [Port:9100, Version: v1.3.1]
 wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz -P /opt
-tar -zxf /opt/node_exporter-1.3.1.linux-amd64.tar.gz -one-top-level=/opt/node_exporter-1.3.1 --strip-component=1
+sudo tar -zxf /opt/node_exporter-1.3.1.linux-amd64.tar.gz --one-top-level=/opt/node_exporter-1.3.1 --strip-component=1
 
 #Run Node Exporter for Prometheus as a Service
 sudo bash -c 'cat <<EOF > /etc/systemd/system/node_exporter.service
@@ -24,7 +24,7 @@ EOF'
 
 #Install Prometheus [Port:9090, Version:v2.32.1]
 wget https://github.com/prometheus/prometheus/releases/download/v2.32.1/prometheus-2.32.1.linux-amd64.tar.gz -P /opt
-tar -zxf /opt/prometheus-2.32.1.linux-amd64.tar.gz -one-top-level=/opt/prometheus-2.32.1 --strip-component=1
+sudo tar -zxf /opt/prometheus-2.32.1.linux-amd64.tar.gz --one-top-level=/opt/prometheus-2.32.1 --strip-component=1
 
 #Configure Prometheus
 sudo bash -c 'cat <<EOF > /opt/prometheus-2.32.1/config.yml
@@ -67,7 +67,7 @@ EOF'
 
 #Install Grafana Enterprise [Port 3000 Version: v8.3.4]
 wget https://dl.grafana.com/enterprise/release/grafana-enterprise-8.3.4.linux-amd64.tar.gz -P /opt
-tar -zxf /opt/grafana-enterprise-8.3.4.linux-amd64.tar.gz -one-top-level=/opt/grafana-enterprise-8.3.4 --strip-component=1
+sudo tar -zxf /opt/grafana-enterprise-8.3.4.linux-amd64.tar.gz --one-top-level=/opt/grafana-enterprise-8.3.4 --strip-component=1
 
 #Run Grafana as a Service
 sudo bash -c 'cat <<EOF > /etc/systemd/system/grafana.service

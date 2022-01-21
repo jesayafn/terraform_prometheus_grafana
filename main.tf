@@ -130,7 +130,7 @@ resource "aws_instance" "prometheus_grafana" {
     device_index         = 0
   }
 
-  user_data = file("prometheus_install.sh")
+  user_data = file("provisioning.sh")
   root_block_device {
     delete_on_termination = true
   }
